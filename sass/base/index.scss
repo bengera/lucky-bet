@@ -1,39 +1,67 @@
+@forward 'reset';
+@use "../abstracts/colors" as *;
+
 body {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Inter', sans-serif;
 }
 
 .grid {
-    border: 2px solid black;
-    padding: 2rem;
+    border: 15px solid black;
+    padding: 1rem;
     font-size: 1.5rem;
 
 }
 
 .account {
+    background-color: $color-green;
+    color: #FFF;
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: center;
 
     &__value{
-
+        
     }
 }
 
 .numbers-display {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    
+}
 
+.initial-number,
+.target-number {
+    padding: 2rem;
+    border: 2px solid #000;
+    width: 50%;
+    text-align: center;
 }
 
 .initial-number {
-
+    
+    background-color: $color-yellow-light;
+    
     &__value{
-
+        font-size: 6rem;
+        font-weight: 900;
+        
     }
 }
 
 .target-number {
-
+   
+    background-color: $color-yellow-dark;
+    
     &__value{
-
+        font-size: 6rem;
+        font-weight: 900;
     }
 }
 
@@ -42,7 +70,16 @@ body {
 }
 
 .btn-bet {
-
+    color: #000;
+    font-size: 3.5rem;
+    padding:1rem;
+    background-color: $color-red;
+    border: 0;
+    font-weight: 900;
+    border: 2px solid #000;
+    margin: 1rem 0;
+    width: 100%;
+    cursor: pointer;
 }
 
 .slidecontainer {
@@ -64,9 +101,6 @@ padding-left: 0.5rem;
 }
 
 
-.slider {
-
-}
 
 .hi-lo-buttons {
 
