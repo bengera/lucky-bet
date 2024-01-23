@@ -1,9 +1,8 @@
-export function setupCounter(element) {
-  let counter = 0
-  const setCounter = (count) => {
-    counter = count
-    element.innerHTML = `count is ${counter}`
-  }
-  element.addEventListener('click', () => setCounter(counter + 1))
-  setCounter(0)
+const slider = document.getElementById("myRange");
+const output = document.getElementById("output");
+output.textContent = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.textContent = this.value;
 }

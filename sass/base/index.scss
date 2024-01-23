@@ -1,0 +1,86 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    border: 2px solid black;
+    padding: 2rem;
+    font-size: 1.5rem;
+
+}
+
+.account {
+
+    &__value{
+
+    }
+}
+
+.numbers-display {
+
+}
+
+.initial-number {
+
+    &__value{
+
+    }
+}
+
+.target-number {
+
+    &__value{
+
+    }
+}
+
+.betting-control {
+    font-size: 1.6rem;
+}
+
+.btn-bet {
+
+}
+
+.slidecontainer {
+    display: flex;
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    // background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+.output {
+    align-self: center;
+padding-left: 0.5rem;
+}
+
+
+.slider {
+
+}
+
+.hi-lo-buttons {
+
+}
+
+.btn-high {
+
+}
+
+.btn-high {
+    
+}
+
+
+
+
+
