@@ -67,6 +67,7 @@ body {
 
 .betting-control {
     font-size: 1.6rem;
+    margin-top: 1rem;
 }
 
 .btn-bet {
@@ -93,6 +94,7 @@ body {
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
+    margin-top: 1rem;
 }
 
 .output {
@@ -104,6 +106,9 @@ padding-left: 0.5rem;
 
 .hi-lo-buttons {
     margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
 }
 
 .btn-high,
@@ -111,6 +116,7 @@ padding-left: 0.5rem;
     padding: 1rem 2.5rem;
     background-color: $color-grey;
     border: 0;
+    width: 60%;
     font-size: 3rem;
     font-weight: 900;
     cursor: pointer;
@@ -118,7 +124,7 @@ padding-left: 0.5rem;
 }
 
 .message-area {
-    margin-top: 1rem;
+    // margin-top: 1rem;
 }
 
 .message {
