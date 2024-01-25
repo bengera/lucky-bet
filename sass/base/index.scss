@@ -103,16 +103,36 @@ padding-left: 0.5rem;
 
 
 .hi-lo-buttons {
-
+    margin-top: 1rem;
 }
 
-.btn-high {
-
+.btn-high,
+.btn-low {
+    padding: 1rem 2.5rem;
+    background-color: $color-grey;
+    border: 0;
+    font-size: 3rem;
+    font-weight: 900;
+    cursor: pointer;
+    border:2px solid black;
 }
 
-.btn-high {
+.message-area {
+    margin-top: 1rem;
+}
+
+.message {
+    font-weight: 400;
+}
+
+// .btn-high {
+
+// }
+
+// .btn-low {
     
-}
+// }
+
 
 
 
