@@ -3,6 +3,7 @@ let userChoice;
 let audioWin = new Audio('win-sound.wav');
 let audioLose = new Audio('lose-sound.wav');
 
+
 const slider = document.getElementById("myRange");
 const output = document.getElementById("output");
 const initialNum = document.querySelector('.initial-number__value');
@@ -32,6 +33,7 @@ function init() {
   messageBox.textContent = 'Higher or Lower?'
   let randomNumber = (Math.floor(Math.random() * 100));
   initialNum.textContent = randomNumber;
+  betButton.disabled = true; 
 
 }
 
@@ -40,12 +42,15 @@ for (const button of buttons) {
   
   button.addEventListener('click',() => {
 
+    if(button)
+
     for (const btn of buttons) {
       btn.classList.remove('btn-toggle');
     }
     button.classList.toggle('btn-toggle');
 
     if (button.classList.contains('btn-toggle')) { 
+      betButton.disabled = false; 
       // Update the message based on which button was clicked
       if (button.classList.contains('btn-high')) {
         userChoice = 'higher';
@@ -82,6 +87,10 @@ betButton.addEventListener('click',() => {
     accountValueEl.textContent = '$' + account;
     reset();
   }
+
+  slider.max = account;
+  slider.value = Math.min(slider.value, account);
+  output.textContent = '$' + slider.value;
 })
 
 
@@ -96,7 +105,7 @@ function reset() {
     initialNum.textContent = randomNumber;
     messageBox.textContent = 'Higher or Lower?';
     targetNum.textContent = '-';
-    betButton.disabled = false; 
+    
     
 }, 3000);
 }
