@@ -7,6 +7,23 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Inter', sans-serif;
+
+
+                        /***** Track Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+    background: $color-green;
+    height: 0.5rem;
+  }
+  
+  /******** Firefox ********/
+  input[type="range"]::-moz-range-track {
+    background: $color-green;
+    height: 0.5rem;
+  }}
+
+#myRange {
+    width: 88%;
 }
 
 .grid {
