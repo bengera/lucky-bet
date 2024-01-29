@@ -3,7 +3,6 @@ let userChoice;
 let audioWin = new Audio('win-sound.wav');
 let audioLose = new Audio('lose-sound.wav');
 
-
 const slider = document.getElementById("myRange");
 const output = document.getElementById("output");
 const initialNum = document.querySelector('.initial-number__value');
@@ -89,7 +88,7 @@ betButton.addEventListener('click',() => {
   }
 
   slider.max = account;
-  slider.value = Math.min(slider.value, account);
+  // slider.value = Math.min(slider.value, account);
   output.textContent = '$' + slider.value;
 })
 
