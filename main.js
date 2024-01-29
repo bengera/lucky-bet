@@ -2,9 +2,11 @@ let account = 1000;
 const slider = document.getElementById("myRange");
 const output = document.getElementById("output");
 const initialNum = document.querySelector('.initial-number__value');
+const targetNum = document.querySelector('.target-number__value');
 const messageBox = document.querySelector('.message');
 const messageUpdate = document.querySelector('.message-update');
 const buttons = document.querySelectorAll('.btn');
+const betButton = document.querySelector('.btn-bet');
 
 //Update the slider value based on account number
 const accountValueEl = document.querySelector('.account__value');
@@ -33,7 +35,7 @@ function init() {
 for (const button of buttons) {
   
   button.addEventListener('click',() => {
-    
+
     for (const btn of buttons) {
       btn.classList.remove('btn-toggle');
     }
@@ -53,9 +55,26 @@ for (const button of buttons) {
 }
 
 
-// Locking in bet
+// Betting - Comparison and result
+betButton.addEventListener('click',() => {
+  console.log('bet placed');
+  let randomNumber = (Math.floor(Math.random() * 100) + 1);
+  targetNum.textContent = randomNumber;
+  // console.log(initialNum.textContent, targetNum.textContent);
+  let initialNumVal = parseInt(initialNum.textContent);
+  let targetNumVal = parseInt(targetNum.textContent);
+  
+  // compare initial num and target num
+  if (initialNumVal > targetNumVal) {
+    console.log(`${initialNumVal} is higher than ${targetNumVal}`)
+  } else if (initialNumVal < targetNumVal) {
+    console.log(`${initialNumVal} is lower than ${targetNumVal}`)
+  }
 
-// add higher or lower to choice variable if active
+})
+
+
+
 
 
 init();
