@@ -6,7 +6,6 @@ const messageBox = document.querySelector('.message');
 const messageUpdate = document.querySelector('.message-update');
 const buttons = document.querySelectorAll('.btn');
 
-
 //Update the slider value based on account number
 const accountValueEl = document.querySelector('.account__value');
 accountValueEl.textContent = '$ ' + account;
@@ -22,8 +21,6 @@ slider.oninput = function() {
   // messageUpdate.textContent = 'You are betting ' + output.textContent;
 }
 
-
-
 function init() {
   console.log('game started');
   messageBox.textContent = 'Higher or Lower?'
@@ -32,11 +29,16 @@ function init() {
 
 }
 
-
 // on click change style of button
 for (const button of buttons) {
+  
   button.addEventListener('click',() => {
+    
+    for (const btn of buttons) {
+      btn.classList.remove('btn-toggle');
+    }
     button.classList.toggle('btn-toggle');
+
     if (button.classList.contains('btn-toggle')) { 
       // Update the message based on which button was clicked
       if (button.classList.contains('btn-high')) {
