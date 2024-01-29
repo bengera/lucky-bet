@@ -1,5 +1,7 @@
 let account = 1000;
 let userChoice;
+let audioWin = new Audio('win-sound.wav');
+let audioLose = new Audio('lose-sound.wav');
 
 const slider = document.getElementById("myRange");
 const output = document.getElementById("output");
@@ -67,13 +69,15 @@ betButton.addEventListener('click',() => {
   let targetNumVal = parseInt(targetNum.textContent);
   // check && conditions first
   if ((userChoice === 'higher' && initialNumVal < targetNumVal) || (userChoice === 'lower' && initialNumVal > targetNumVal)) {
-    messageBox.textContent = 'You win! Wait 5 seconds for next round!';
+    audioWin.play();
+    messageBox.textContent = 'You win! Wait 3 seconds for next round!';
     account += parseInt(output.textContent.replace('$', ''));
     accountValueEl.textContent = '$' + account;
     reset();
    
   } else {
-    messageBox.textContent = 'You lose! Wait 5 seconds for next round!';
+    audioLose.play();
+    messageBox.textContent = 'You lose! Wait 3 seconds for next round!';
     account -= parseInt(output.textContent.replace('$', ''));
     accountValueEl.textContent = '$' + account;
     reset();
@@ -94,7 +98,7 @@ function reset() {
     targetNum.textContent = '-';
     betButton.disabled = false; 
     
-}, 5000);
+}, 3000);
 }
 
 
