@@ -1,11 +1,11 @@
 let account = 1000;
-
 const slider = document.getElementById("myRange");
 const output = document.getElementById("output");
 const initialNum = document.querySelector('.initial-number__value');
 const messageBox = document.querySelector('.message');
 const messageUpdate = document.querySelector('.message-update');
 const buttons = document.querySelectorAll('.btn');
+
 
 //Update the slider value based on account number
 const accountValueEl = document.querySelector('.account__value');
@@ -19,8 +19,9 @@ output.textContent = '$' + slider.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.textContent = '$' + this.value;
-  messageUpdate.textContent = 'You are betting ' + output.textContent;
+  // messageUpdate.textContent = 'You are betting ' + output.textContent;
 }
+
 
 
 function init() {
@@ -31,14 +32,25 @@ function init() {
 
 }
 
+
 // on click change style of button
-
-
 for (const button of buttons) {
   button.addEventListener('click',() => {
     button.style.backgroundColor = '#2ca83f';
+    if (button.style.backgroundColor === 'rgb(44, 168, 63)') { 
+      // Update the message based on which button was clicked
+      if (button.classList.contains('btn-high')) {
+        messageBox.textContent = 'You have chosen higher and bet ' + output.textContent + '. Click "Bet" to confirm';
+      } else if (button.classList.contains('btn-low')) {
+        messageBox.textContent = 'You have chosen lower and bet ' + output.textContent + '. Click "Bet" to confirm';
+      }
+    }
   })
 }
+
+
+// Locking in bet
+
 // add higher or lower to choice variable if active
 
 
