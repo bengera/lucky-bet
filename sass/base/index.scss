@@ -121,6 +121,12 @@ padding-left: 0.5rem;
     font-weight: 900;
     cursor: pointer;
     border:2px solid black;
+
+    &:hover {
+        background-color: rgb(240, 240, 240);
+    }
+
+    
 }
 
 .message-area {

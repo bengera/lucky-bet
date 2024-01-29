@@ -5,6 +5,7 @@ const output = document.getElementById("output");
 const initialNum = document.querySelector('.initial-number__value');
 const messageBox = document.querySelector('.message');
 const messageUpdate = document.querySelector('.message-update');
+const buttons = document.querySelectorAll('.btn');
 
 //Update the slider value based on account number
 const accountValueEl = document.querySelector('.account__value');
@@ -29,6 +30,16 @@ function init() {
   initialNum.textContent = randomNumber;
 
 }
+
+// on click change style of button
+
+
+for (const button of buttons) {
+  button.addEventListener('click',() => {
+    button.style.backgroundColor = '#2ca83f';
+  })
+}
+// add higher or lower to choice variable if active
 
 
 init();
