@@ -36,13 +36,15 @@ function init() {
 // on click change style of button
 for (const button of buttons) {
   button.addEventListener('click',() => {
-    button.style.backgroundColor = '#2ca83f';
-    if (button.style.backgroundColor === 'rgb(44, 168, 63)') { 
+    button.classList.toggle('btn-toggle');
+    if (button.classList.contains('btn-toggle')) { 
       // Update the message based on which button was clicked
       if (button.classList.contains('btn-high')) {
         messageBox.textContent = 'You have chosen higher and bet ' + output.textContent + '. Click "Bet" to confirm';
       } else if (button.classList.contains('btn-low')) {
         messageBox.textContent = 'You have chosen lower and bet ' + output.textContent + '. Click "Bet" to confirm';
+      } else {
+        messageBox.textContent = 'Higher or Lower?';
       }
     }
   })
