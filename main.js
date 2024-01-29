@@ -1,9 +1,10 @@
-let account = 2000;
+let account = 1000;
 
 const slider = document.getElementById("myRange");
 const output = document.getElementById("output");
 const initialNum = document.querySelector('.initial-number__value');
 const messageBox = document.querySelector('.message');
+const messageUpdate = document.querySelector('.message-update');
 
 //Update the slider value based on account number
 const accountValueEl = document.querySelector('.account__value');
@@ -17,6 +18,7 @@ output.textContent = '$' + slider.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.textContent = '$' + this.value;
+  messageUpdate.textContent = 'You are betting ' + output.textContent;
 }
 
 
