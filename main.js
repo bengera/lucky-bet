@@ -1,4 +1,6 @@
 let account = 1000;
+let userChoice;
+
 const slider = document.getElementById("myRange");
 const output = document.getElementById("output");
 const initialNum = document.querySelector('.initial-number__value');
@@ -44,8 +46,10 @@ for (const button of buttons) {
     if (button.classList.contains('btn-toggle')) { 
       // Update the message based on which button was clicked
       if (button.classList.contains('btn-high')) {
+        userChoice = 'higher';
         messageBox.textContent = 'You have chosen higher and bet ' + output.textContent + '. Click "Bet" to confirm';
       } else if (button.classList.contains('btn-low')) {
+        userChoice = 'lower';
         messageBox.textContent = 'You have chosen lower and bet ' + output.textContent + '. Click "Bet" to confirm';
       } else {
         messageBox.textContent = 'Higher or Lower?';
@@ -54,27 +58,42 @@ for (const button of buttons) {
   })
 }
 
-
 // Betting - Comparison and result
 betButton.addEventListener('click',() => {
   console.log('bet placed');
   let randomNumber = (Math.floor(Math.random() * 100) + 1);
   targetNum.textContent = randomNumber;
-  // console.log(initialNum.textContent, targetNum.textContent);
   let initialNumVal = parseInt(initialNum.textContent);
   let targetNumVal = parseInt(targetNum.textContent);
-  
-  // compare initial num and target num
-  if (initialNumVal > targetNumVal) {
-    console.log(`${initialNumVal} is higher than ${targetNumVal}`)
-  } else if (initialNumVal < targetNumVal) {
-    console.log(`${initialNumVal} is lower than ${targetNumVal}`)
+  // check && conditions first
+  if ((userChoice === 'higher' && initialNumVal < targetNumVal) || (userChoice === 'lower' && initialNumVal > targetNumVal)) {
+    messageBox.textContent = 'You win! Wait 5 seconds for next round!';
+    account += parseInt(output.textContent.replace('$', ''));
+    accountValueEl.textContent = '$' + account;
+    reset();
+   
+  } else {
+    messageBox.textContent = 'You lose! Wait 5 seconds for next round!';
+    account -= parseInt(output.textContent.replace('$', ''));
+    accountValueEl.textContent = '$' + account;
+    reset();
   }
-
 })
 
 
-
+//reset
+function reset() {
+  for (const btn of buttons) {
+    btn.classList.remove('btn-toggle');
+  }
+  setTimeout(function(){
+    let randomNumber = (Math.floor(Math.random() * 100) + 1);
+    initialNum.textContent = randomNumber;
+    messageBox.textContent = 'Higher or Lower?';
+    targetNum.textContent = '-';
+    
+}, 5000);
+}
 
 
 init();
