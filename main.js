@@ -28,7 +28,7 @@ slider.oninput = function() {
 function init() {
   console.log('game started');
   messageBox.textContent = 'Higher or Lower?'
-  let randomNumber = (Math.floor(Math.random() * 100) + 1);
+  let randomNumber = (Math.floor(Math.random() * 100));
   initialNum.textContent = randomNumber;
 
 }
@@ -85,12 +85,14 @@ betButton.addEventListener('click',() => {
 function reset() {
   for (const btn of buttons) {
     btn.classList.remove('btn-toggle');
+    betButton.disabled = true; 
   }
   setTimeout(function(){
     let randomNumber = (Math.floor(Math.random() * 100) + 1);
     initialNum.textContent = randomNumber;
     messageBox.textContent = 'Higher or Lower?';
     targetNum.textContent = '-';
+    betButton.disabled = false; 
     
 }, 5000);
 }
