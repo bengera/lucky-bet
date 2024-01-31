@@ -25,8 +25,7 @@ output.textContent = '$' + slider.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.textContent = '$' + this.value;
-
-  // Does .btn-toggle exist (if it does)
+  // Check if btn-toggle exists, without this error throws for btn-toggle not existing before selection is made
   if (document.querySelector('.btn-toggle')) {
     if (document.querySelector('.btn-toggle').classList.contains('btn-high')) {
       messageBox.textContent = 'You have chosen higher and bet ' + output.textContent + '. Click "Bet" to confirm';
@@ -39,7 +38,7 @@ slider.oninput = function() {
 function init() {
   console.log('game started');
   messageBox.textContent = 'Higher or Lower?'
-  let randomNumber = (Math.floor(Math.random() * 100));
+  let randomNumber = (Math.floor(Math.random() * 99)) + 1;
   initialNum.textContent = randomNumber;
   betButton.disabled = true; 
 
