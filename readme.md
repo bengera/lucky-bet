@@ -11,8 +11,8 @@ The game is simple: you start with $1000 and are given a random number between 1
 ```
 🛠 Add a game over message when the player has no money left, or a 'loan' button. ✅ (31/01)     
 🛠 Fix range bar for Chrome and Edge.  
-🛠 Add background
-🛠 Add animation
+🛠 Add background 
+🛠 Add animation 
 
 ## 29/01 ##
 I've got the basic features of the project working. You can choose higher or lower, bet, win and lose money.
@@ -35,7 +35,20 @@ betButton.disabled = true;
         
 }, 3000);
 ```
-
+## 31/01 ##
+Added a losing condition if the user has $0 in their account. Made the mistake of putting it outside of the win / lose statements. So the losing message would display but then the reset function would run. The return stops the final reset from running.
+```JS
+      if (account <= 0) {
+    for (const button of buttons) {
+      button.disabled = true;
+    }
+    betButton.disabled = true;
+    messageBox.textContent = 'You have lost all your money. Refresh browser to play again.';
+    return;
+   
+  }
+    
+```
 
 
 
