@@ -2,6 +2,7 @@ let account = 1000;
 let userChoice;
 let audioWin = new Audio('win-sound.wav');
 let audioLose = new Audio('lose-sound.wav');
+let audioBleep = new Audio('arcade-bleep.mp3');
 
 const slider = document.getElementById("myRange");
 const output = document.getElementById("output");
@@ -38,7 +39,7 @@ function init() {
 for (const button of buttons) {
   
   button.addEventListener('click',() => {
-
+    audioBleep.play();
     if(button)
 
     for (const btn of buttons) {
@@ -116,3 +117,5 @@ function reset() {
 }
 
 init();
+
+

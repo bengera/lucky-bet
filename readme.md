@@ -5,14 +5,15 @@ The game is simple: you start with $1000 and are given a random number between 1
 ```
 🧠 Concept learned  
 💭 Thoughts  
-🛠 Things that need to be improved  
+🛠 Things to add / improve
 👽 New Feature  
 🔴 Concept not understood  
 ```
 🛠 Add a game over message when the player has no money left, or a 'loan' button. ✅ (31/01)     
 🛠 Fix range bar for Chrome and Edge.  
-🛠 Add background 
-🛠 Add animation 
+🛠 Add background  
+🛠 Add leveling system  
+🛠 Add animation
 
 ## 29/01 ##
 I've got the basic features of the project working. You can choose higher or lower, bet, win and lose money.
