@@ -25,8 +25,17 @@ output.textContent = '$' + slider.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.textContent = '$' + this.value;
-  // messageUpdate.textContent = 'You are betting ' + output.textContent;
+
+  // Does .btn-toggle exist (if it does execute)
+  if (document.querySelector('.btn-toggle')) {
+    if (document.querySelector('.btn-toggle').classList.contains('btn-high')) {
+      messageBox.textContent = 'You have chosen higher and bet ' + output.textContent + '. Click "Bet" to confirm';
+    } else if (document.querySelector('.btn-toggle').classList.contains('btn-low')) {
+      messageBox.textContent = 'You have chosen lower and bet ' + output.textContent + '. Click "Bet" to confirm';
+    }
+  }
 }
+
 function init() {
   console.log('game started');
   messageBox.textContent = 'Higher or Lower?'

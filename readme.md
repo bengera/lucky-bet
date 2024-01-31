@@ -5,15 +5,17 @@ The game is simple: you start with $1000 and are given a random number between 1
 ```
 🧠 Concept learned  
 💭 Thoughts  
-🛠 Things to add / improve
+🛠 Things to fix
 👽 New Feature  
+🟣 Things to add / improve
 🔴 Concept not understood  
 ```
-🛠 Add a game over message when the player has no money left, or a 'loan' button. ✅ (31/01)     
-🛠 Fix range bar for Chrome and Edge.  
-🛠 Add background  
-🛠 Add leveling system  
-🛠 Add animation
+🟣 Add a game over message when the player has no money left, or a 'loan' button. ✅ (31/01)     
+🟣 Fix range bar for Chrome and Edge.  
+🟣 Add background  
+🟣 Add leveling system  
+🟣 Add animation  
+🛠 Confirmation message doesn't update after choosing higher or lower and changing the slider number.
 
 ## 29/01 ##
 I've got the basic features of the project working. You can choose higher or lower, bet, win and lose money.
@@ -37,7 +39,7 @@ betButton.disabled = true;
 }, 3000);
 ```
 ## 31/01 ##
-Added a losing condition if the user has $0 in their account. Made the mistake of putting it outside of the win / lose statements. So the losing message would display but then the reset function would run. The return stops the final reset from running.
+👽 Added a losing condition if the user has $0 in their account. Made the mistake of putting it outside of the win / lose statements. So the losing message would display but then the reset function would run. The return stops the final reset from running.
 ```JS
       if (account <= 0) {
     for (const button of buttons) {
@@ -50,6 +52,8 @@ Added a losing condition if the user has $0 in their account. Made the mistake o
   }
     
 ```
+
+
 
 
 
