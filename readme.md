@@ -15,7 +15,7 @@ The game is simple: you start with $1000 and are given a random number between 1
 🟣 Add background  
 🟣 Add leveling system  
 🟣 Add animation  
-🛠 Confirmation message doesn't update after choosing higher or lower and changing the slider number.
+
 
 ## 29/01 ##
 I've got the basic features of the project working. You can choose higher or lower, bet, win and lose money.
