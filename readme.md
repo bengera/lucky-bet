@@ -9,7 +9,7 @@ The game is simple: you start with $1000 and are given a random number between 1
 👽 New Feature  
 🔴 Concept not understood  
 ```
-🛠 Add a game over message when the player has no money left, or a 'loan' button.  
+🛠 Add a game over message when the player has no money left, or a 'loan' button. ✅ (31/01)     
 🛠 Fix range bar for Chrome and Edge.  
 🛠 Add background
 🛠 Add animation

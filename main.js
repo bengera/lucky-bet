@@ -100,12 +100,25 @@ function reset() {
     betButton.disabled = true; 
   }
   setTimeout(function(){
-    let randomNumber = (Math.floor(Math.random() * 100) + 1);
-    initialNum.textContent = randomNumber;
-    messageBox.textContent = 'Higher or Lower?';
-    targetNum.textContent = '-';
-    
-    
+    if (account === 0) {
+      console.log('You are out of money!')
+      messageBox.textContent = 'You are out of money! Refresh browser to play again.'
+      betButton.disabled = true; 
+      for (const btn of buttons) {
+       btn.disabled = true; 
+      }
+      initialNum.textContent = '☠';
+      targetNum.textContent = '☠';
+
+    } else {
+
+      let randomNumber = (Math.floor(Math.random() * 100) + 1);
+      initialNum.textContent = randomNumber;
+      messageBox.textContent = 'Higher or Lower?';
+      t
+    }
+   
+     
 }, 3000);
 }
 
