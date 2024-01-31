@@ -26,7 +26,6 @@ slider.oninput = function() {
   output.textContent = '$' + this.value;
   // messageUpdate.textContent = 'You are betting ' + output.textContent;
 }
-
 function init() {
   console.log('game started');
   messageBox.textContent = 'Higher or Lower?'
@@ -35,7 +34,6 @@ function init() {
   betButton.disabled = true; 
 
 }
-
 // on click change style of button
 for (const button of buttons) {
   
@@ -63,7 +61,6 @@ for (const button of buttons) {
     }
   })
 }
-
 // Betting - Comparison and result
 betButton.addEventListener('click',() => {
   console.log('bet placed');
@@ -84,14 +81,23 @@ betButton.addEventListener('click',() => {
     messageBox.textContent = 'You lose! Wait 3 seconds for next round!';
     account -= parseInt(output.textContent.replace('$', ''));
     accountValueEl.textContent = '$' + account;
-    reset();
+
+      if (account <= 0) {
+    for (const button of buttons) {
+      button.disabled = true;
+    }
+    betButton.disabled = true;
+    messageBox.textContent = 'You have lost all your money. Refresh browser to play again.';
+    return;
+   
   }
+    
+    reset();
+  } 
 
   slider.max = account;
-  // slider.value = Math.min(slider.value, account);
   output.textContent = '$' + slider.value;
 })
-
 
 //reset
 function reset() {
@@ -100,27 +106,13 @@ function reset() {
     betButton.disabled = true; 
   }
   setTimeout(function(){
-    if (account === 0) {
-      console.log('You are out of money!')
-      messageBox.textContent = 'You are out of money! Refresh browser to play again.'
-      betButton.disabled = true; 
-      for (const btn of buttons) {
-       btn.disabled = true; 
-      }
-      initialNum.textContent = '☠';
-      targetNum.textContent = '☠';
-
-    } else {
-
-      let randomNumber = (Math.floor(Math.random() * 100) + 1);
-      initialNum.textContent = randomNumber;
-      messageBox.textContent = 'Higher or Lower?';
-      t
-    }
-   
-     
+    let randomNumber = (Math.floor(Math.random() * 100) + 1);
+    initialNum.textContent = randomNumber;
+    messageBox.textContent = 'Higher or Lower?';
+    targetNum.textContent = '-';
+    
+    
 }, 3000);
 }
-
 
 init();
